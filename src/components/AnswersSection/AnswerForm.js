@@ -23,26 +23,26 @@ function AnswerForm() {
     <div>
      <div>
         {answers.map((answer, index) => (
-            <div style={{marginTop:'2rem', marginBottom:'1rem'}}>
+            <div className={custom.answerSection} style={{marginTop:'1rem', marginBottom:'1rem'}}>
           <div className={custom.answer} key={index}>{answer}</div>
           <CommentSectionArea />
           </div>
         ))}
       </div>
 
-      <div style={{marginTop:'2rem', marginBottom:'1rem'}}>
+      <div className={custom.answerSection} style={{marginTop:'1rem', marginBottom:'1rem'}}>
           <div className={custom.answer}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo rerum quaerat repellat, velit rem nostrum quod consectetur iure deleniti quae dolorum, cupiditate molestias eligendi nam.</div>
           <CommentSectionArea />
           </div>
-          <div style={{marginTop:'2rem', marginBottom:'1rem'}}>
+          <div className={custom.answerSection} style={{marginTop:'1rem', marginBottom:'1rem'}}>
           <div className={custom.answer}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo rerum quaerat repellat, velit rem nostrum quod consectetur iure deleniti quae dolorum, cupiditate molestias eligendi nam.</div>
           <CommentSectionArea />
           </div>
-          <div style={{marginTop:'2rem', marginBottom:'1rem'}}>
+          <div className={custom.answerSection} style={{marginTop:'1rem', marginBottom:'1rem'}}>
           <div className={custom.answer}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo rerum quaerat repellat, velit rem nostrum quod consectetur iure deleniti quae dolorum, cupiditate molestias eligendi nam.</div>
           <CommentSectionArea />
           </div>
-      <textarea className={custom.textArea} value={newAnswer} onChange={handleAnswerChange} rows={7}  placeholder="Enter your answer here" />
+      <textarea className={custom.textArea} value={newAnswer} onChange={handleAnswerChange} rows={6}  placeholder="Enter your answer here" />
      
       <button className={`${custom.button} ${custom.button1}`}  onClick={handleAddAnswer}>Post your answer</button>
      

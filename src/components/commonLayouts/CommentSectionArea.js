@@ -11,7 +11,7 @@ function CommentSectionArea() {
   return (
     <div>
           <div className={custom.views}>
-            <p><b>0</b> Answers &nbsp; &nbsp; <b>2</b> views</p>
+            <p><b>0</b> Answers &nbsp; <b>2</b> views</p>
             <p>Updated <b>2sec </b> ago</p>
           </div>
           <div className={custom.commentsArea}>

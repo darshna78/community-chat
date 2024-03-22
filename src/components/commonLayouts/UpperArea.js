@@ -7,7 +7,7 @@ import Navbar from './Navbar'
 
 function UpperArea() {
   return (
-    <div>
+    <div >
        
      
       <div className={custom.names}>
@@ -17,7 +17,7 @@ function UpperArea() {
             <span>Physics Hons.</span>
         
       </div>
-      <div className={custom.askquestion}>
+      <div className={custom.addQuestion}>
         <div>Top Questions</div>
          <button className={custom.button}>Add question</button> 
       </div>

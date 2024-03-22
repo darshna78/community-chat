@@ -1,71 +1,46 @@
 'use client'
-import { useState } from 'react';
-import custom from '../custom.module.css'
+import { useContext, useState } from 'react';
+import custom from '../custom.module.css';
 import Image from 'next/image';
-import menuIcon from '../../../public/Images/menuIcon.svg'
+import menuIcon from '../../../public/Images/menuIcon.svg';
+import CategoryContext from './CategoryContext';
+import { Router } from 'next/navigation';
 
 const Sidebar = () => {
- const [show,setShow] = useState(false)
-  function showSidebar() {
+  const { activeCategory, setActiveCategory, subcategories } = useContext(CategoryContext);
+  const [show,setShow] = useState(false)
+  
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category === activeCategory ? null : category);    
+  };
+    function showSidebar() {
     setShow(!show);
   }
 
-    return (
-      <div>
-         <button onClick={showSidebar} className={custom.toggleButton}><Image width={30} height={30} src={menuIcon}/>
+  return (
+    <div>
+   
+
+       <button onClick={showSidebar} className={custom.toggleButton}>
+        <Image width={20} height={20} src={menuIcon} />
       </button>
-     
-      <div style={{ display: show ? 'block' : '' }}  className={custom.sidebar}>
-      
+
+      <div style={{ display: show ? 'block' : ''}}  className={custom.sidebar}>
         <div className={custom.sidebarContent}>
-       
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-    
-          </ul>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-    
-          </ul>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-    
-          </ul>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-    
-          </ul>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-    
-          </ul>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-    
-          </ul>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-     
-          </ul>
-         
+          {Object.keys(subcategories).map((category) => (
+            <div key={category}>
+              <p
+                className={activeCategory === category ? custom.activeCategory : custom.catrgory}
+                onClick={() => handleCategoryClick(category)}
+              >
+                {category}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
-      </div>
-    );
-  };
-  
-  export default Sidebar;
+    </div>
+  );
+};
+
+export default Sidebar;

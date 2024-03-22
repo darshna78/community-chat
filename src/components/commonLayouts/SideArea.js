@@ -1,18 +1,50 @@
+'use client'
 import custom from '../custom.module.css'
+import Image from 'next/image';
+import demoImg from '../../../public/Images/demoImg.jpg'
+import demoImg1 from '../../../public/Images/demoImg1.jpg'
+import RelatedQuestion from '../commonLayouts/RelatedQuestion'
+import { useContext } from 'react';
+import CategoryContext from './CategoryContext'; // Assuming you have CategoryContext defined as shown in the previous response
+import Link from 'next/link';
 
 const SideArea = () => {
+  const { activeCategory, subcategories } = useContext(CategoryContext);
     return (
+     
       <div className={`${custom.sideArea} ${custom.rightmost }`}>
         <div className={custom.sideAreaContent}>
           
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem cumque pariatur molestiae quam, ut blanditiis error dolores totam dolorum quaerat perferendis tempora nemo facere reprehenderit, officia possimus veniam in iusto!</p>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, magnam soluta! Perspiciatis dolore sed officia? Ea esse in dolores veritatis corrupti suscipit autem officiis labore rem ad quam dicta voluptates, laudantium velit magni cumque doloribus libero eius optio, a illum!</p>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem cumque pariatur molestiae quam, ut blanditiis error dolores totam dolorum quaerat perferendis tempora nemo facere reprehenderit, officia possimus veniam in iusto!</p>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, magnam soluta! Perspiciatis dolore sed officia? Ea esse in dolores veritatis corrupti suscipit autem officiis labore rem ad quam dicta voluptates, laudantium velit magni cumque doloribus libero eius optio, a illum!</p>
+        <Image  src={demoImg1} 
+          layout='responsive'
+          className={custom.poster}
+          
+         />
+         <Image  src={demoImg} 
+         layout='responsive'
+          className={custom.poster}
+         />
+         
+          <RelatedQuestion />
+          
+          {activeCategory && (
+          <div className={custom.subcategories}>
+              <p>subcategories of {activeCategory}</p>
+            {subcategories[activeCategory].map((subcategory, index) => (
+              <div className={custom.subcategory}><Link href={'/'} key={index}>{subcategory}</Link></div>
+            ))}
+            {/* <RelatedQuestion /> */}
+          </div>
+        )}
+        
+         
         </div>
+       
       </div>
     );
   };
   
-  export default SideArea;
+ 
   
+
+  export default SideArea;
