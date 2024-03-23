@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/AnswersSection/AnswerSection.js", "src/app/layout.tsx", "src/app/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/AnswersSection/AnswerSection.tsx", "src/app/layout.tsx", "src/app/page.tsx", "src/components/commonLayouts/SideArea.tsx", "src/components/commonLayouts/Sidebar.tsx", "src/components/commonLayouts/CategoryContext.tsx", "src/components/commonLayouts/CategoryContext.tsx", "src/components/commonLayouts/Sidebar.tsx", "src/components/commonLayouts/CategoryContext.tsx", "src/components/commonLayouts/SideArea.tsx", "src/components/commonLayouts/SideArea.tsx", "src/components/commonLayouts/CategoryContext.tsx"],
   "exclude": ["node_modules"]
 }

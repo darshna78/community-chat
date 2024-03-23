@@ -1,6 +1,7 @@
 .nav {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 2rem;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -20,8 +21,6 @@
 
 .names {
   display: flex;
-  /* justify-content: center;
-     */
   padding: 10px 20px;
   gap: 1rem;
   margin-top: 4rem;
@@ -159,7 +158,9 @@
   
   background-color: #fff;
   overflow-y: auto;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2)
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  
 }
 
 .sidebarContent p {
@@ -172,16 +173,17 @@
 .sidebarContent {
   margin-top: 3rem;
 }
-.catrgory {
+.category {
   cursor: pointer;
 }
-.catrgory:hover {
+.category:hover {
   background-color: #f2f2fd;
 
 }
 .activeCategory {
   background-color: #eaeef4;
   cursor: pointer;
+  
 
 }
 
@@ -206,7 +208,7 @@
   }
   .arrowIcon {
     margin-left: -10px;
-    margin-top: -12px;
+    margin-top: -26px;
   }
 }
 
@@ -235,6 +237,7 @@
     /* padding-bottom: 1rem; */
     padding-bottom: 0.5rem;
     border-radius: 5px;
+  
     
   }
 
@@ -306,34 +309,62 @@
 @media screen and (max-width: 1000px) {
   .maincontainer {
     display: grid;
-    grid-template-columns: 1fr 5fr 0fr;
-
-    grid-column-gap: 0.5rem;
-  }
-  .sideArea {
-     display: none;
-   
+    grid-template-columns: 1fr 5fr  ;
+    position: relative;
     
   }
- 
+  .section {
+    width: 20%;
+  }
+  .sideArea {
+     position: absolute;
+     left: 12rem;
+     width: 75vw;  
+  }
+  .sideAreaContent {
+    margin-top: 0.5rem;
+  }
+ .poster  {
+  display: none;
+ }
+ .subcategories {
+  display: none;
+ }
 }
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .maincontainer {
     display: grid;
-    grid-template-columns: 1fr 4.2fr 0fr;
-
-    grid-column-gap: 0.5rem;
+    grid-template-columns: 1fr 4fr;
+    
+   
   }
-
-}
+  .section {
+    width: 20%;
+  }
+  .sideArea {
+     position: absolute;
+     left: 12rem;
+     width: 75vw; 
+  }
+  .sideAreaContent {
+    margin-top: 0.5rem;
+  }
+ .poster {
+  display: none;
+ }
+} */
 @media screen and (max-width: 800px) {
   .maincontainer {
     display: grid;
     grid-template-columns: 1fr;
-    /* grid-column-gap: 0.5rem; */
+    
   }
   
-  
+  .sideArea {
+   
+    left: 1rem;
+    width: 97vw;  
+ }
 
 }
 

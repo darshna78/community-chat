@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div>
       <nav className={custom.nav}>
-      <Image className={custom.arrowIcon} src = {arrowIcon} />
+      <Image className={custom.arrowIcon} src = {arrowIcon} alt='arrow' />
      
       <p className={custom.heading}>Live Chat</p>
       </nav>

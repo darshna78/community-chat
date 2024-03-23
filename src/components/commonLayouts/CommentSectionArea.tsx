@@ -24,7 +24,7 @@ function CommentSectionArea() {
          <p>0</p>
           </div>
           <div className={custom.comments}>
-         <Image src = {heart} alt ='heart'className={custom.icons}  />
+         <Image src = {heart} alt ='heart'className={custom.icons}   />
          <p>5</p>
           </div>
           <div className={custom.comments}>

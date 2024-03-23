@@ -5,10 +5,10 @@ import CommentSectionArea from '../commonLayouts/CommentSectionArea';
 import custom from '../custom.module.css'
 
 function AnswerForm() {
-  const [answers, setAnswers] = useState([]);
-  const [newAnswer, setNewAnswer] = useState('');
+  const [answers, setAnswers] = useState<string[]>([]);
+  const [newAnswer, setNewAnswer] = useState<string>('');
 
-  const handleAnswerChange = (event) => {
+  const handleAnswerChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNewAnswer(event.target.value);
   };
 

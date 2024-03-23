@@ -12,7 +12,7 @@ function UpperArea() {
      
       <div className={custom.names}>
         <span>Delhi University </span>
-            <Image src={vector}
+            <Image src={vector}  alt="vector"
             style={{ marginTop: '4px' }}  />
             <span>Physics Hons.</span>
         
@@ -25,7 +25,7 @@ function UpperArea() {
         <Image src = {frame}
             
             layout="responsive"
-           
+           alt="frame"
         />
       </div>
     </div>
